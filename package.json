@@ -1,0 +1,27 @@
+{
+  "name": "feq",
+  "version": "1.0.0",
+  "description": "Frontend Query is a javascript http library for sending requests to the backend enginee (bee)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feql/feq.git"
+  },
+  "keywords": [
+    "feq",
+    "bee",
+    "graphql",
+    "organic-queries",
+    "demo",
+    "mvp"
+  ],
+  "author": "nyola mike",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feql/feq/issues"
+  },
+  "homepage": "https://github.com/feql/feq#readme"
+}
