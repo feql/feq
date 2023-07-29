@@ -1,6 +1,6 @@
 {
   "name": "@feql/feq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Frontend Query is a javascript http library for sending requests to the backend enginee (bee)",
   "main": "index.js",
   "scripts": {

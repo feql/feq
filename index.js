@@ -1,17 +1,35 @@
 let baseUrl = ''
-if (process.env.NODE_ENV === 'production') {
-    baseUrl = process.env.PROD_BASE_URL;
-} else if (process.env.NODE_ENV === 'test') {
-    baseUrl = process.env.TEST_BASE_URL;
-} else {
-    if(process && process.env && process.env.DEV_BASE_URL){
-        baseUrl = process.env.DEV_BASE_URL;
-    }else if(process && process.env && process.env.BASE_URL){
-        baseUrl = process.env.BASE_URL;
-    }else if(window && window.BASE_URL){
-        baseUrl = window.BASE_URL;
+if(typeof process != 'undefined' && typeof process.env != 'undefined'){
+    if (process.env.NODE_ENV === 'production') {
+        baseUrl = process.env.PROD_BEE_BASE_URL;
+    } else if (process.env.NODE_ENV === 'test') {
+        baseUrl = process.env.TEST_BEE_BASE_URL;
+    } else {
+        if(process && process.env && process.env.DEV_BEE_BASE_URL){
+            baseUrl = process.env.DEV_BEE_BASE_URL;
+        }else if(process && process.env && process.env.BEE_BASE_URL){
+            baseUrl = process.env.BEE_BASE_URL;
+        }else if(window && window.BEE_BASE_URL){
+            baseUrl = window.BEE_BASE_URL;
+        }
+    }
+}else if(import.meta.env){
+    if (import.meta.env.PROD === true) {
+        baseUrl = import.meta.env.VITE_PROD_BEE_BASE_URL;
+    } else if (import.meta.env.TEST && import.meta.env.TEST === true) {
+        baseUrl = import.meta.env.VITE_TEST_BEE_BASE_URL;
+    } else {
+        if(import.meta.env.VITE_DEV_BEE_BASE_URL){
+            baseUrl = import.meta.env.VITE_DEV_BEE_BASE_URL;
+        }else if(import.meta.env.VITE_BEE_BASE_URL){
+            baseUrl = import.meta.env.VITE_BEE_BASE_URL;
+        }else if(window && window.VITE_BEE_BASE_URL){
+            baseUrl = window.VITE_BEE_BASE_URL;
+        }
     }
 }
+
+
 
 export default {
     baseUrl: baseUrl,
